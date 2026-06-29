@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+mark {
+  background-color: #fde047;
+  color: inherit;
+  border-radius: 2px;
+  padding: 0 1px;
+}
