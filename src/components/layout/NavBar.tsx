@@ -8,8 +8,8 @@ const linkClass = ({ isActive }: { isActive: boolean }) =>
 export function NavBar() {
   return (
     <header className="border-b border-gray-200 bg-white">
-      <nav className="mx-auto flex max-w-5xl items-center gap-2 px-4 py-3 sm:px-6">
-        <span className="mr-4 text-base font-semibold text-gray-900">
+      <nav className="mx-auto flex max-w-5xl flex-wrap items-center gap-x-2 gap-y-1 px-4 py-3 sm:px-6">
+        <span className="mr-4 text-sm font-semibold text-gray-900 sm:text-base">
           Поиск по базе знаний
         </span>
         <NavLink to="/" end className={linkClass}>
