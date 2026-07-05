@@ -1,4 +1,5 @@
 import type { AskOut } from "../../types/api";
+import { normalizeExtractedText } from "../../utils/text";
 
 export function AnswerCard({ result }: { result: AskOut }) {
   return (
@@ -22,7 +23,7 @@ export function AnswerCard({ result }: { result: AskOut }) {
                         <span className="text-gray-400">стр. {source.page}</span>
                       )}
                     </div>
-                    {source.text && <p className="mt-1 whitespace-pre-line">{source.text}</p>}
+                    {source.text && <p className="mt-1">{normalizeExtractedText(source.text)}</p>}
                   </>
                 ) : (
                   <pre className="whitespace-pre-wrap break-all">{JSON.stringify(source)}</pre>

@@ -1,5 +1,6 @@
 import type { SearchResultOut } from "../../types/api";
 import { highlightMatches } from "../../utils/highlight";
+import { normalizeExtractedText } from "../../utils/text";
 
 interface Props {
   result: SearchResultOut;
@@ -18,8 +19,8 @@ export function ResultCard({ result, query }: Props) {
           релевантность {result.score.toFixed(2)}
         </span>
       </div>
-      <p className="whitespace-pre-line text-sm leading-relaxed text-gray-700">
-        {highlightMatches(result.text, query)}
+      <p className="text-sm leading-relaxed text-gray-700">
+        {highlightMatches(normalizeExtractedText(result.text), query)}
       </p>
     </article>
   );
