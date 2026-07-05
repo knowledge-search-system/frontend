@@ -18,6 +18,9 @@ export function NavBar() {
         <NavLink to="/search" className={linkClass}>
           Поиск
         </NavLink>
+        <NavLink to="/ask" className={linkClass}>
+          Вопрос-ответ
+        </NavLink>
       </nav>
     </header>
   );

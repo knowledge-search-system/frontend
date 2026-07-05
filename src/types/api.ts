@@ -33,6 +33,24 @@ export interface SearchOut {
   page_size: number;
 }
 
+export interface MlUploadOut {
+  id: string;
+  chunks: number;
+}
+
+export interface AskSource {
+  file_name?: string;
+  page?: number;
+  text?: string;
+  score?: number;
+  [key: string]: unknown;
+}
+
+export interface AskOut {
+  answer: string;
+  sources: AskSource[];
+}
+
 export interface ApiErrorBody {
   error: {
     code: string;
