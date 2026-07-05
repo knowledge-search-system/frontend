@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react";
 import { uploadMlDocument } from "../services/ml";
 import { getApiErrorMessage } from "../services/api";
+import { generateLocalId } from "../utils/id";
 
 export interface MlUploadItem {
   localId: string;
@@ -23,7 +24,7 @@ export function useUploadMlDocuments() {
   const addFiles = useCallback(
     (files: File[]) => {
       const newItems: MlUploadItem[] = files.map((file) => ({
-        localId: crypto.randomUUID(),
+        localId: generateLocalId(),
         fileName: file.name,
         progress: 0,
         status: "uploading",

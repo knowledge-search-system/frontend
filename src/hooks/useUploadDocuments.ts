@@ -3,6 +3,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { getDocument, uploadDocument } from "../services/documents";
 import { getApiErrorMessage } from "../services/api";
 import { isTerminalStage, normalizeStage, type DocumentStage } from "../utils/status";
+import { generateLocalId } from "../utils/id";
 
 const POLL_INTERVAL_MS = 2000;
 
@@ -32,7 +33,7 @@ export function useUploadDocuments() {
   const addFiles = useCallback(
     (files: File[]) => {
       const newItems: UploadItem[] = files.map((file) => ({
-        localId: crypto.randomUUID(),
+        localId: generateLocalId(),
         fileName: file.name,
         stage: "uploading",
         progress: 0,
